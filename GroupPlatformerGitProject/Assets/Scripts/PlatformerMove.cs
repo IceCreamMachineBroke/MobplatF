@@ -8,6 +8,7 @@ public class PlatformerMove : MonoBehaviour {
     public float moveSpeed = 1.0f;
     public float jumpSpeed = 1.0f;
     bool grounded = false;
+    bool jumpAllowed, wallJumpAllowed;
 	// Update is called once per frame
 	void Update () {
         float moveX = Input.GetAxis("Horizontal");
@@ -38,6 +39,13 @@ public class PlatformerMove : MonoBehaviour {
         if (collision.gameObject.layer == 8)
         {
             grounded = false;
+        }
+    }
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.tag.Equals("Wall"))
+        {
+            wallJumpAllowed = true;
         }
     }
 }
