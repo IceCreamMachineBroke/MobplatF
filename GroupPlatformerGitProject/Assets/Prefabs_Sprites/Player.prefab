@@ -40,10 +40,11 @@ GameObject:
   - component: {fileID: 212514735566419728}
   - component: {fileID: 50365295304068372}
   - component: {fileID: 114365680717491254}
-  - component: {fileID: 114955491258953944}
   - component: {fileID: 114980139696333294}
   - component: {fileID: 61422231732822834}
   - component: {fileID: 61030197807845744}
+  - component: {fileID: 114574584485676310}
+  - component: {fileID: 114591843302913954}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -210,6 +211,39 @@ MonoBehaviour:
   Mega: {fileID: 0}
   shootSpeed: 10
   fireRate: 0.3
+--- !u!114 &114574584485676310
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1895764113159040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf996f39cb1ce1e43828a26774d8dee5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFull: 
+  slots: []
+--- !u!114 &114591843302913954
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1895764113159040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb05bfd54e90bc54591819f7d1c60d67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  jumpForce: 0
+  feetPos: {fileID: 0}
+  checkRadius: 0
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 0
+  jumpTimeCounter: 0
+  jumpTime: 0
 --- !u!114 &114724755907101336
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -225,19 +259,6 @@ MonoBehaviour:
   coinText: {fileID: 0}
   soundToPlay: {fileID: 0}
   door: {fileID: 0}
---- !u!114 &114955491258953944
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1895764113159040}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7282ce8196290ee4a92c1ece1ca9e676, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 1
-  jumpSpeed: 1
 --- !u!114 &114980139696333294
 MonoBehaviour:
   m_ObjectHideFlags: 1
