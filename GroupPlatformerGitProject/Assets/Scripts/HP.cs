@@ -64,4 +64,9 @@ public class HP : MonoBehaviour {
         //this is for the refill of health in an HP zone
     }
 
+    public void HealthUp()
+    {
+        health += 1;
+        Destroy(gameObject);    }
+
 }
