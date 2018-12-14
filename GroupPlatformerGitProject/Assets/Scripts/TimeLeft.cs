@@ -22,7 +22,7 @@ public class TimeLeft : MonoBehaviour {
         {
             StopCoroutine("LoseTime");
             countdownText.text = "Times Up!";
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            SceneManager.LoadScene("LoseScreen");
 
         }
     }

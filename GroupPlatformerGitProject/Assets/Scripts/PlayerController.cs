@@ -1,10 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
     private Rigidbody2D rb;
+    public int health;
+    public int lives = 3;
+    public Text healthDisplay;
     public float speed;
+    public Text livesText;
     private float moveInput;
     public float jumpForce;
 
@@ -19,8 +25,9 @@ public class PlayerController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         rb = GetComponent<Rigidbody2D>();
+        lives = PlayerPrefs.GetInt("Lives");
 
-	}
+    }
 
     // Update is called once per frame
     private void FixedUpdate()
@@ -30,9 +37,12 @@ public class PlayerController : MonoBehaviour {
     }
     void Update()
     {
+        healthDisplay.text = health.ToString();
+        livesText.GetComponent<Text>().text = "Lives: " + lives;
         isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
 
-        if(isGrounded == true && Input.GetKeyDown(KeyCode.Space)){
+
+        if(isGrounded == true && Input.GetKeyDown(KeyCode.Space)) { 
             isJumping = true;
             jumpTimeCounter = jumpTime;
             rb.velocity = Vector2.up * jumpForce;
@@ -51,6 +61,31 @@ public class PlayerController : MonoBehaviour {
         if (Input.GetKeyUp(KeyCode.Space)){
             isJumping = false;
         }
+        
 
     }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Enemy")
+        {
+            health--;
+        }
+        if (lives <= 0)
+        {
+            SceneManager.LoadScene("LoseScreen");
+        }
+        if (health <= 0)
+        {
+            if(lives <= 0)
+            {
+                SceneManager.LoadScene("LoseScreen");
+            }
+            PlayerPrefs.SetInt("Lives", lives--);
+            //reload the level
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+        }
+        
+    }
+    
 }
