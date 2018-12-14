@@ -9,6 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 3b321c31fa204a84698d6cd318eb625d
+  - enabled: 1
+    path: Assets/Scenes/LevelSelect.unity
+    guid: f6bcb24aa191ea64d971bd051df714b5
+  - enabled: 1
     path: Assets/Scenes/Level 1.unity
     guid: 40714b7a3e17c6c408836f1fec4cd7df
   - enabled: 1
@@ -18,14 +24,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Level 3.unity
     guid: b3ca6a9041e8d8c49a21f252c5cb2cc1
   - enabled: 1
-    path: Assets/Scenes/LevelSelect.unity
-    guid: f6bcb24aa191ea64d971bd051df714b5
-  - enabled: 1
     path: Assets/Scenes/LoseScreen 1.unity
     guid: 2949fe6cc1e1885478ae39a041a6eb4e
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: 3b321c31fa204a84698d6cd318eb625d
+    path: Assets/Scenes/WinScreen.unity
+    guid: c95ac9fc062e8164f8d432193b065516
   - enabled: 1
     path: Assets/Scenes/Options.unity
     guid: 4f805de0ad76a03449ccec50c0da97cf
@@ -35,7 +38,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Player HUD Level.unity
     guid: 6d7441ff1382d06408a56e1c748d0d3d
-  - enabled: 1
-    path: Assets/Scenes/WinScreen.unity
-    guid: c95ac9fc062e8164f8d432193b065516
   m_configObjects: {}
